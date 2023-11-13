@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TD ALGO</title>
+</head>
+
+<body>
+    <div id="title-head">
+        <h1>Comprendre la complexité algorithmique</h1>
+        <h4>Par Owen DONNARS MMI3 - DW</h4>
+    </div>
+
+    <hr>
+
+    <p>
+        Pour commencer, voici une petite définition. La complexité algorithmique est une mesure de la quantité de
+        ressources (temps, espace mémoire, etc.) qu'un algorithme utilise en fonction de la taille de l'entrée. Il
+        s'agit d'évaluer comment les performances de l'algorithme évoluent à mesure que la taille de l'entrée augmente.
+        <br />C'est une manière de caractériser la performance d'un algorithme en fonction de la taille du problème
+        qu'il résout. Un algorithme avec une complexité inférieure est généralement préféré car il est plus efficace
+        pour des entrées plus grandes.<br /> Pour rendre cela plus parlant, voici deux exemples concrets ci-dessous.
+        <br /><br />
+        Dans le premier exemple, nous allons devoir trier des tableaux avec différents algorithmes de tri : le tri à
+        bulle, le tri par insertion et le tri par fusion. Ces trois tris ont un temps d'exécution différent car ils
+        fonctionnent de différentes manières : <br /><br /><b>Tri Fusion :</b> Le tri fusion est un algorithme de tri
+        récursif qui divise le tableau en deux moitiés, trie récursivement chaque moitié, puis fusionne les moitiés
+        triées pour obtenir un tableau trié. Il a une complexité de O(n log n), soit logarithmique, ce qui en fait
+        l'algorithme avec le moins de temps d'exécution.
+        <br /><br />
+        <b>Tri à Bulle :</b> Le tri à bulle est un algorithme simple qui parcourt le tableau plusieurs fois, compare les
+        éléments adjacents et les échange s'ils sont dans le mauvais ordre. Il répète ce processus jusqu'à ce que le
+        tableau soit trié. Il a une complexité de O(n^2), soit quadratique.
+        <br /><br />
+        <b>Tri par Insertion :</b> Le tri par insertion construit le tableau trié élément par élément en prenant chaque
+        élément et le plaçant à sa position correcte dans le tableau déjà trié. Il a une complexité : O(n^2), soit
+        quadratique.
+        <br /><br /><b>Recherche Naïve :</b> L'algorithme de recherche naïve parcourt séquentiellement chaque élément du tableau jusqu'à
+        trouver l'élément recherché ou atteindre la fin du tableau. Complexité : O(n) dans le pire cas.
+
+        <br /><br /><b>Recherche Dichotomique :</b> Aussi appelée recherche binaire, cette méthode divise récursivement le tableau en deux,
+        éliminant la moitié des éléments à chaque étape en fonction de la comparaison avec la clé de recherche, jusqu'à
+        trouver l'élément ou déterminer qu'il n'est pas présent. Complexité : O(log n) dans le pire cas, mais le tableau
+        doit être trié au préalable.
+    </p>
+    <br />
+    <div id="main-holder">
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+            <div id="options-graph" style="width: 38vw;">
+                <h2>Créer le graphe des différents tris</h2>
+
+                <label for="interval">Choisissez un intervalle de taille de tableau :</label>
+                <select id="interval">
+                    <option value="10">0 - 10</option>
+                    <option value="100">0 - 100</option>
+                    <option value="1000">0 - 1000</option>
+                    <option value="10000">0 - 10000</option>
+                    <option value="10000">0 - 100000</option>
+                </select>
+                <label>Choisissez les types de tris à comparer :</label>
+                <div>
+
+                    <input type="checkbox" id="triBulleCheckbox" checked>
+                    <label for="triBulleCheckbox">Tri à bulle</label>
+                </div>
+                <div>
+
+                    <input type="checkbox" id="triInsertionCheckbox" checked>
+                    <label for="triInsertionCheckbox">Tri insertion</label>
+                </div>
+                <div>
+
+                    <input type="checkbox" id="triFusionCheckbox" checked>
+                    <label for="triFusionCheckbox">Tri fusion</label>
+                </div>
+                <button onclick="genererGraphiques()">Créer</button>
+            </div>
+            <div style="width: 38vw;">
+                <h2>Créer le graphe Dichotomie VS Naïf</h2>
+                <button onclick="CreateGrapheDichotomie()">Créer</button>
+            </div>
+        </div>
+
+        <div id="canvas-here">
+            <div class="canvas-holder">
+                <h1> Algorithmes de tri </h1>
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="canvas-holder">
+                <h1> Algorithmes Dichotomie VS Naïf </h1>
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div id="resultat"></div>
+        </div>
+    </div>
+
+    </main>
+
+
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="crypto.js"></script>
+
+</html>

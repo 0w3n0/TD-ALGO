@@ -1,0 +1,65 @@
+body, html{
+    background-color: whitesmoke;
+    font-family: Poppins;
+    margin: 0vh 3vw 0px 3vw;
+}
+
+.canvas-holder {
+    width: 35vw; /* Vous pouvez ajuster cette valeur selon vos besoins */
+    height: 35vh; /* Vous pouvez ajuster cette valeur selon vos besoins */
+    background-color: whitesmoke;
+    border-radius: 40px;
+    padding: 20px;
+}
+
+#canvas-here{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+#canvas-here #resultat{
+    margin-top: 10vh;
+    width: 40vw;
+}
+
+#title-head{
+    display: flex;
+   align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+#title-head h4{
+    margin: -2vh 0px 2vh 0px;
+}
+
+#options-graph{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+#interval{
+    width: 7vw;
+}
+
+button{
+    width: 7vw;
+}
+
+#resultat{
+    font-size: 0.90em;
+}
+
+p{
+    text-align: justify;
+}
+
+#main-holder{
+    background-color: rgb(194, 255, 255);
+    padding: 20px;
+    border-radius: 20px;
+}
